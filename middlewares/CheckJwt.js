@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secretKey = 'Oussama LD';
+const secretKey = process.env.JWT_SECRET;
 const verifyToken = (token) => {
     try {
         const decodedToken = jwt.verify(token, secretKey);
@@ -9,6 +9,6 @@ const verifyToken = (token) => {
         return null;
     }
 };
-module.exports={
+module.exports = {
     verifyToken
 };
